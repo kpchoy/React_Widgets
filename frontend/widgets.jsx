@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Clock from './clock';
 
+function Root() {
+  return(
+    <div>
 
-
+      <Clock/>
+    </div>
+  );
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<div>YO from widgets</div>, document.getElementById('root'));
+  ReactDOM.render(<Root/>, document.getElementById('root'));
 });
