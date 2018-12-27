@@ -36,10 +36,20 @@ export default class Clock extends Component {
     min = (min < 10) ? `0${min}` : min; 
 
     return (
-      <div>
+      <div className="clock-main">
         <h1>Clock Widget!</h1>
-        <h2>Time: {hour} {min} {sec} PDT</h2>
-        <h2>Date: {day} {month} {date} {year} </h2>
+        <div className="time-date">
+          <div className="time-div">
+            <h2>Time:</h2>
+            <h2>{hour}:{min}:{sec} PDT</h2>
+          </div>
+          
+          <div className="time-div">
+            <h2>Date:</h2>
+            <h2>{day} {month} {date} {year}</h2>
+          </div>
+
+        </div>
       </div>
     );
   }

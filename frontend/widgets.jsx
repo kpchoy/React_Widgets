@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Clock from './clock';
+import Wheather from './wheather';
 
 function Root() {
   return(
-    <div>
+    <div className="main">
 
       <Clock/>
+      <Wheather/>
     </div>
   );
 }
