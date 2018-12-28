@@ -6,6 +6,6 @@ export default class Wheather extends Component {
       <div>
         <h1>Wheather Widget!</h1>
       </div>
-    )
+    );
   }
 }

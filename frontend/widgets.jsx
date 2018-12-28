@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Clock from './clock';
 import Wheather from './wheather';
+import Tabs from './tabs';
 
 function Root() {
   return(
@@ -9,6 +10,7 @@ function Root() {
 
       <Clock/>
       <Wheather/>
+      <Tabs/>
     </div>
   );
 }
