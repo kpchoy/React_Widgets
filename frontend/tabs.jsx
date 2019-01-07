@@ -4,6 +4,7 @@ class Headers extends React.Component {
   render() {
     const selected = this.props.selectedPane;
     const headers = this.props.panes.map((pane, index) => {
+       
       const title = pane.title;
       const klass = index === selected ? 'active' : '';
 
