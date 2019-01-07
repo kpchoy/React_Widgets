@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Headers extends Component {
+class Headers extends React.Component {
   render() {
-    const selected = this.props.selectedPane; 
+    const selected = this.props.selectedPane;
     const headers = this.props.panes.map((pane, index) => {
       const title = pane.title;
       const klass = index === selected ? 'active' : '';
@@ -11,25 +11,26 @@ class Headers extends Component {
         <li
           key={index}
           className={klass}
-          onClick={this.props.onTabChosen(index)}>
-          {title} {' '}
+          onClick={() => this.props.onTabChosen(index)}>
+          {title}{' '}
         </li>
       );
     });
-
     return (
-      <div>
+      <ul className='tab-header'>
         {headers}
-      </div>
+      </ul>
+
     );
-  }
+ }
 }
 
-
-export default class Tabs extends Component {
+export default class Tabs extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {selectedPane: 0};
+    this.state = {
+      selectedPane: 0
+    };
     this.selectTab = this.selectTab.bind(this);
   }
 
@@ -38,15 +39,24 @@ export default class Tabs extends Component {
   }
 
   render() {
+    const pane = this.props.panes[this.state.selectedPane];
+
     return (
       <div>
-        <h1>Tabs Widget!</h1>
-        <article>
-          <ul>
-
-          </ul>
-        </article>
+        <h1>Tabs</h1>
+        <div className='tabs'>
+          <Headers
+            selectedPane={this.state.selectedPane}
+            onTabChosen={this.selectTab}
+            panes={this.props.panes}>
+          </Headers>
+          <div className='tab-content'>
+            <article>
+              {pane.content}
+            </article>
+          </div>
+        </div>
       </div>
-    )
+    );
   }
 }
