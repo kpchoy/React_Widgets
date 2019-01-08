@@ -88,3 +88,11 @@
 .tab-content > article {
   text-align: center; 
 }
+
+.weather {
+  background: green;
+  border: solid 2px black; 
+  text-align: center; 
+  font-size: 24px;
+  color: white;
+}

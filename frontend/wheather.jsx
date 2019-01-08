@@ -61,6 +61,7 @@ export default class Wheather extends Component {
     } else {
       content = <div className='loading'>loading weather...</div>;
     }
+    
     return (
       <div>
         <h1>Weather</h1>

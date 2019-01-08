@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Clock from './clock';
 import Wheather from './wheather';
 import Tabs from './tabs';
+import AutoComplete from './autocomplete';
 
 const panes = [
   {title: "one", content: "i am first pane"},
@@ -17,6 +18,8 @@ function Root() {
       <Clock/>
       <Wheather/>
       <Tabs panes={panes}/>
+      <AutoComplete />
+
     </div>
   );
 }
