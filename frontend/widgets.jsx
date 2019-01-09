@@ -11,6 +11,17 @@ const panes = [
   {title: "third", content: "i am third pane"}
 ];
 
+const names = [
+  "Abba",
+  "Barney",
+  "Barbara",
+  "Jeff",
+  "Jenny",
+  "Sarah",
+  "Sally",
+  "Xander"
+];
+
 function Root() {
   return(
     <div className="main">
@@ -18,7 +29,7 @@ function Root() {
       <Clock/>
       <Wheather/>
       <Tabs panes={panes}/>
-      <AutoComplete />
+      <AutoComplete names={names}/>
 
     </div>
   );
