@@ -56,15 +56,16 @@ export default class AutoComplete extends Component {
     return (
       <div>
         <h1>AutoComplete</h1>
-
-           <input
-            onChange={(e) => this.handleInput(e)}
-            value={this.state.inputVal}
-            placeholder='Search...'/>
-        
-        <ul>
-          {listNames}
-        </ul> 
+          <div className="auto">
+            <input
+              onChange={(e) => this.handleInput(e)}
+              value={this.state.inputVal}
+              placeholder='Search...'/>
+          
+            <ul>
+              {listNames}
+            </ul> 
+          </div>
       </div>
     );
   }

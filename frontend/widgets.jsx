@@ -28,8 +28,11 @@ function Root() {
 
       <Clock/>
       <Wheather/>
-      <Tabs panes={panes}/>
-      <AutoComplete names={names}/>
+
+      <div className="interactive">
+        <Tabs panes={panes}/>
+        <AutoComplete names={names}/>
+      </div>
 
     </div>
   );
