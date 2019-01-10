@@ -7,6 +7,7 @@ export default class AutoComplete extends Component {
       inputVal: ""
     };
     this.handleInput = this.handleInput.bind(this);
+    this.selectName = this.selectName.bind(this);
   }
 
 
@@ -20,19 +21,32 @@ export default class AutoComplete extends Component {
       return this.props.names;
       // return the whole list of names
     }
-
     this.props.names.forEach(name => {
+      // slices each name to length of input val
       const sub = name.slice(0, this.state.inputVal.length);
+      // if sliced name matches input val, then push name into matches
       if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
         matches.push(name);
       }
     });
+
+    if (matches.length === 0) {
+      matches.push('No Matches');
+    }
+
+    return matches; 
+  }
+
+  selectName(event) {
+
+    const name = event.currentTarget.innerText;
+    this.setState({inputVal:name});
   }
 
   render() {
-    let listNames = this.props.names.map((person, index) => {
+    let listNames = this.matches().map((person, index) => {
       return (
-        <li key={index}>
+        <li key={index} onClick={this.selectName}>
           {person}
         </li>
       );      
@@ -41,7 +55,7 @@ export default class AutoComplete extends Component {
 
     return (
       <div>
-        Autocomplete
+        <h1>AutoComplete</h1>
 
            <input
             onChange={(e) => this.handleInput(e)}
